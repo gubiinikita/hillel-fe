@@ -24,6 +24,6 @@ function returnTypeOfDifferentData(...constNames) {
   constNames.forEach(constName => {
     console.log(`Const type: ` + typeof constName);
   });
-}
+};
 
 returnTypeOfDifferentData(score, bigAmount, drink, stillAlive, unknownValue, zero, uniqueID, character);
