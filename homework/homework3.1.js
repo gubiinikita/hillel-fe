@@ -1,11 +1,11 @@
 /** Primitives */
 const score = 10;
 const bigAmount = BigInt(1234567890123456789012345678901234567890);
-const drink = "Milk";
+const drink = 'Milk';
 const stillAlive = true;
 let unknownValue;
 const zero = null;
-const uniqueID = Symbol("Something special");
+const uniqueID = Symbol('Something special');
 
 /** Objects */
 let character = {
