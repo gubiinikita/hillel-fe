@@ -20,3 +20,8 @@ console.log(`Substring: ` + `${String(number).substring(0, 1)} `+
 let signs = number.toString().split('');
 
 console.log(`Split: ` + `${signs[0]} ` + `${signs[1]} ` + `${signs[2]} ` + `${signs[3]} ` + `${signs[4]} `);
+
+/** Fourth Solution: Spread */
+signs = [...number.toString()];
+
+console.log(`Spread: ` + `${signs[0]} ` + `${signs[1]} ` + `${signs[2]} ` + `${signs[3]} ` + `${signs[4]} `);
