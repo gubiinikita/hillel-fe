@@ -35,21 +35,21 @@
 // console.log(result);
 
 /** switch case */
-//task 1
-let input = prompt("Input a number: ");
-
-switch (Number(input)) {
-  case 1:
-    console.log("A");
-    break;
-  case 2:
-    console.log("B");
-    break;
-  case 3:
-    console.log("C");
-    break;
-  default:
-    console.log("UA");
-}
-
-//task 2
+// //task 1
+// let input = prompt("Input a number: ");
+//
+// switch (Number(input)) {
+//   case 1:
+//     console.log("A");
+//     break;
+//   case 2:
+//     console.log("B");
+//     break;
+//   case 3:
+//     console.log("C");
+//     break;
+//   default:
+//     console.log("UA");
+// }
+//
+// //task 2
