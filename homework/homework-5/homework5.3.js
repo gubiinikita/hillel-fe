@@ -1,5 +1,5 @@
 /** Дано ціле число N (ввести через prompt). Вивести всі цілі числа від 1 до 100, квадрат яких не перевищує числа N */
-let N = prompt('Enter an integer');
+let N =  parseInt(prompt('Enter an integer'));
 
 /** while */
 // let i = 1;

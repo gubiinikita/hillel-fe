@@ -1,6 +1,6 @@
 /** Дано ціле число (ввести через 'prompt'). З'ясувати, чи просто воно
  *  (простим називається число, більше 1, що не має інших дільників, крім 1 і себе). */
-let N = prompt('Enter an integer');
+let N = parseInt(prompt('Enter an integer'));
 let isSimple = N > 1;
 
 /** while */
