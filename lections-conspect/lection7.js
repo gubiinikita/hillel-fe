@@ -36,17 +36,39 @@
 // console.log(sum(arr));
 
 /** Написати функцію лічильник. Яка буде при кожному виклику збільшувати значення на одиницю */
-function createCounter() {
-  let count = 0; // Змінна в замиканні
+// function createCounter() {
+//   let count = 0; // Змінна в замиканні
+//
+//   return function() {
+//     count++; // Збільшуємо значення на 1
+//     return count; // Повертаємо поточне значення
+//   };
+// }
+//
+// const counter = createCounter();
+//
+// console.log(counter());
+// console.log(counter());
+// console.log(counter());
 
-  return function() {
-    count++; // Збільшуємо значення на 1
-    return count; // Повертаємо поточне значення
+/** Карування */
+function multiply(x) {
+  return function(y) {
+    return function(z) {
+      return x * y * z;
+    };
   };
 }
 
-const counter = createCounter();
+console.log(multiply(2)(3)(4)); // 24
 
-console.log(counter());
-console.log(counter());
-console.log(counter());
+const multiplyByTwo = multiply(2);
+const multiplyByThree = multiplyByTwo(3);
+
+console.log(multiplyByThree(4)); // 24
+console.log(multiply(2)(3)(4)); // 24
+
+const multiplyByTwoAndThree = multiply(2)(3);
+
+console.log(multiplyByTwoAndThree(5)); // 30
+console.log(multiplyByTwoAndThree(10)); // 60
