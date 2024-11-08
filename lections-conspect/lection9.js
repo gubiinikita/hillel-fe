@@ -18,22 +18,21 @@ function NumberOperations(n = 6) {
   this.n = n >= 0 ? n : 'Error!';
 
   this.sum = function(n = this.n) {
-    if (n === 'Error!') return 'Error';
-    return (n * (n + 1)) / 2;
-  }
+    if (n === 'Error!') return 'Error!';
+    if (n === 0) return 0;
+    return n + this.sum(n - 1);
+  };
 
   this.factorial = function(n = this.n) {
     if (n === 'Error!') return 'Error!';
-    let result = 1;
-    for (let i = 1; i <= n; i++) {
-      result *= i;
-    }
-    return result;
+    if (n === 0 || n === 1) return 1;
+    return n * this.factorial(n - 1);
   };
 
   this.power = function(m) {
     if (this.n === 'Error!' || m < 0) return 'Error!';
-    return Math.pow(this.n, m);
+    if (m === 0) return 1;
+    return this.n * this.power(m - 1);
   };
 
   this.fibonacci = function(n = this.n) {
