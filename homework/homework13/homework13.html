@@ -1,0 +1,52 @@
+<!--/**Доробити валідацію для надсилання повідомлення з використанням регулярних виразів:-->
+
+<!--Поля:-->
+
+<!--Name - обов'язкове текстове поле-->
+<!--Message - текстове поле не менше 5 символів-->
+<!--Phone number - обов'язкове поле типу phone. З початком на +380-->
+<!--Email - email обов'язково повинен мати @ та крапку-->
+<!--Після відправки, в консоль відображаємо дані, які ввів користувач.-->
+
+<!--Під час помилки показувати її під полем.-->
+<!--*/-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+</head>
+<body>
+<form id="form-auth">
+    <label>
+        Name:
+        <input type="text" id="name" name="name" placeholder="name">
+        <span class="error" id="nameError"></span>
+    </label>
+    <br>
+    <label>
+        Message:
+        <input type="text" id="message" name="message" minlength="5" placeholder="message">
+        <span class="error" id="messageError"></span>
+    </label>
+    <br>
+    <label>
+        Phone:
+        <input type="tel" id="phone" name="phone" placeholder="phone">
+        <span class="error" id="phoneError"></span>
+    </label>
+    <br>
+    <label>
+        Email:
+        <input type="email" id="email" name="email" placeholder="email">
+        <span class="error" id="emailError"></span>
+    </label>
+    <br>
+    <button type="submit">Submit</button>
+</form>
+
+<script src="homework13.js"></script>
+</body>
+</html>

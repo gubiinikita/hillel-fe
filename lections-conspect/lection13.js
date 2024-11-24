@@ -1,6 +1,7 @@
 // <!--Написати код відправки форми.-->
 // <!--Після відправки, в консоль відображаємо дані, які ввів користувач.-->
 // <!--Додатково додати туди тип відправки форми, та адресу відправки-->
+
 // const loginForm = document.getElementById('form-login')
 // loginForm.addEventListener('submit',e =>{
 //   e.preventDefault()
