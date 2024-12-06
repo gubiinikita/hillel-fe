@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .form-group { margin-bottom: 10px; }
+        .form-group label { display: block; margin-bottom: 5px; }
+        .form-group input { width: 100%; padding: 5px; }
+        .user-table, .user-table th, .user-table td {
+            border: 1px solid #ddd;
+            border-collapse: collapse;
+            padding: 10px;
+            text-align: left;
+        }
+        .user-table { width: 100%; margin-top: 20px; }
+        .actions button { margin-right: 5px; }
+        .user-details { margin-top: 20px; border: 1px solid #ddd; padding: 10px; display: none; }
+    </style>
+</head>
+<body>
+<div id="user-form">
+    <h3>Add / Edit User</h3>
+    <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" />
+    </div>
+    <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" />
+    </div>
+    <div class="form-group">
+        <label for="phone">Phone:</label>
+        <input type="phone" id="phone" />
+    </div>
+    <button id="save-user">Save</button>
+</div>
+<table class="user-table" id="user-table">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+<div class="user-details" id="user-details">
+    <h3>User Details</h3>
+    <p><strong>Name:</strong> <span id="details-name"></span></p>
+    <p><strong>Email:</strong> <span id="details-email"></span></p>
+    <p><strong>Phone:</strong> <span id="details-phone"></span></p>
+    <pre id="details-json" style="background: #f9f9f9; padding: 10px; border: 1px solid #ddd;"></pre>
+</div>
+<script src="lection15.js"></script>
+</body>
+</html>
