@@ -15,69 +15,67 @@
  * Не забудьте після того, як напишите цей конструктор, створити 2-3 екземпляри (конкретних студентів)
  * і показати використання цих методів.
  */
-function createStudent(firstName, lastName, birthYear, grades = []) {
-  const attendance = Array(25).fill(null);
+class Student {
+  constructor(firstName, lastName, birthYear, grades = []) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.birthYear = birthYear;
+    this.grades = grades;
+    this.attendance = Array(25).fill(null);
+  }
 
-  return {
-    firstName,
-    lastName,
-    birthYear,
-    grades,
-    attendance,
+  getAge() {
+    const currentYear = new Date().getFullYear();
+    return currentYear - this.birthYear;
+  }
 
-    getAge() {
-      const currentYear = new Date().getFullYear();
-      return currentYear - this.birthYear;
-    },
+  getAverageGrade() {
+    if (this.grades.length === 0) return 0;
+    const total = this.grades.reduce((sum, grade) => sum + grade, 0);
+    return total / this.grades.length;
+  }
 
-    getAverageGrade() {
-      if (this.grades.length === 0) return 0;
-      const total = this.grades.reduce((sum, grade) => sum + grade, 0);
-      return total / this.grades.length;
-    },
-
-    present() {
-      const index = this.attendance.indexOf(null);
-      if (index !== -1) {
-        this.attendance[index] = true;
-      } else {
-        console.log("Масив відвідуваності заповнений!");
-      }
-    },
-
-    absent() {
-      const index = this.attendance.indexOf(null);
-      if (index !== -1) {
-        this.attendance[index] = false;
-      } else {
-        console.log("Масив відвідуваності заповнений!");
-      }
-    },
-
-    getAverageAttendance() {
-      const validRecords = this.attendance.filter(entry => entry !== null);
-      const totalAttendance = validRecords.filter(entry => entry === true).length;
-      return validRecords.length > 0 ? totalAttendance / validRecords.length : 0;
-    },
-
-    summary() {
-      const avgGrade = this.getAverageGrade();
-      const avgAttendance = this.getAverageAttendance();
-
-      if (avgGrade > 90 && avgAttendance > 0.9) {
-        return "Молодець!";
-      } else if (avgGrade > 90 || avgAttendance > 0.9) {
-        return "Добре, але можна краще";
-      } else {
-        return "Редиска!";
-      }
+  present() {
+    const index = this.attendance.indexOf(null);
+    if (index !== -1) {
+      this.attendance[index] = true;
+    } else {
+      console.log('Масив відвідуваності заповнений!');
     }
-  };
+  }
+
+  absent() {
+    const index = this.attendance.indexOf(null);
+    if (index !== -1) {
+      this.attendance[index] = false;
+    } else {
+      console.log('Масив відвідуваності заповнений!');
+    }
+  }
+
+  getAverageAttendance() {
+    const validRecords = this.attendance.filter(entry => entry !== null);
+    const totalAttendance = validRecords.filter(entry => entry === true).length;
+    return validRecords.length > 0 ? totalAttendance / validRecords.length : 0;
+  }
+
+  summary() {
+    const avgGrade = this.getAverageGrade();
+    const avgAttendance = this.getAverageAttendance();
+
+    if (avgGrade > 90 && avgAttendance > 0.9) {
+      return 'Молодець!';
+    } else if (avgGrade > 90 || avgAttendance > 0.9) {
+      return 'Добре, але можна краще';
+    } else {
+      return 'Редиска!';
+    }
+  }
 }
 
-const student1 = createStudent("Микита", "Губій", 1995, [44, 88, 77, 100, 50]);
-const student2 = createStudent("Кристина", "Мойсеєва", 1993, [75, 80, 82]);
-const student3 = createStudent("Євгенія", "Чепіга", 1996, [3, 100, 43]);
+const student1 = new Student('Микита', 'Губій', 1995, [44, 88, 77, 100, 50]);
+const student2 = new Student('Кристина', 'Мойсеєва', 1993, [75, 80, 82]);
+const student3 = new Student('Євгенія', 'Чепіга', 1996, [3, 100, 43]);
 
 student1.present();
 student1.present();
