@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Аватар</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<h1>Мій GitHub Профіль</h1>
+<div>
+    <input id="username" type="text" placeholder="Введіть ім'я користувача GitHub">
+    <button onclick="fetchGitHubAvatar()">Отримати аватар</button>
+</div>
+<div id="profile">
+
+</div>
+
+<script>
+  async function fetchGitHubAvatar() {
+    const username = document.getElementById('username').value.trim();
+    const profileDiv = document.getElementById('profile');
+
+    profileDiv.innerHTML = '';
+
+    if (!username) {
+      profileDiv.innerHTML = '<p>Будь ласка, введіть ім\'я користувача.</p>';
+      return;
+    }
+
+    try {
+      const response = await fetch(`https://api.github.com/users/${username}`);
+
+      if (!response.ok) {
+        throw new Error('Користувача не знайдено');
+      }
+
+      const data = await response.json();
+
+      profileDiv.innerHTML = `
+                    <p><strong>${data.name || username}</strong></p>
+                    <img src="${data.avatar_url}" alt="Аватар користувача">
+                `;
+    } catch (error) {
+      profileDiv.innerHTML = `<p>Помилка: ${error.message}</p>`;
+    }
+  }
+</script>
+</body>
+</html>
