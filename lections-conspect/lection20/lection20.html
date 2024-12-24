@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show/hide list</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        #myList {
+            margin: 20px 0;
+        }
+        button {
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+<h1>List of elements</h1>
+<div>
+    <button id="hideBtn">Hide list</button>
+    <button id="showBtn">Show list</button>
+</div>
+<ul id="myList">
+    <li>Ele 1</li>
+    <li>Ele 2</li>
+    <li>Ele 3</li>
+</ul>
+
+<script>
+  $(document).ready(function () {
+    $('#hideBtn').click(function () {
+      $('#myList').slideUp();
+    });
+
+    $('#showBtn').click(function () {
+      $('#myList').slideDown();
+    });
+  });
+</script>
+</body>
+</html>

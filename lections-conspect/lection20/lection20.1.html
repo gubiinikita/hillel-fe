@@ -1,0 +1,42 @@
+<div class="slider">
+    <div><img src="../../source/homework11/1.jpg" alt="Слайд 1"></div>
+    <div><img src="../../source/homework11/2.jpg" alt="Слайд 2"></div>
+    <div><img src="../../source/homework11/3.jpg" alt="Слайд 3"></div>
+</div>
+
+<!-- Slick CSS -->
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Slick JS -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+<script>
+  $(document).ready(function () {
+    $('.slider').slick({
+      dots: true,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 3000
+    });
+  });
+</script>
+<style>
+    .slider {
+        width: 80%; /* Наприклад, 80% від ширини батьківського елемента */
+        max-width: 800px; /* Максимальна ширина */
+        margin: 0 auto; /* Вирівнювання по центру */
+        height: 400px; /* Встановлена висота */
+    }
+
+    .slider img {
+        width: 100%; /* Адаптація зображення під ширину слайдера */
+        height: 100%; /* Адаптація зображення під висоту слайдера */
+        object-fit: cover; /* Обрізка зображення для заповнення слайдера */
+    }
+</style>
