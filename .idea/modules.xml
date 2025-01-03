@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Front React.iml" filepath="$PROJECT_DIR$/.idea/Front React.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../QAA/Protonix_QAA/cp-backend-e2e/.idea/cp-backend-e2e.iml" filepath="$PROJECT_DIR$/../../QAA/Protonix_QAA/cp-backend-e2e/.idea/cp-backend-e2e.iml" />
     </modules>
   </component>
 </project>
